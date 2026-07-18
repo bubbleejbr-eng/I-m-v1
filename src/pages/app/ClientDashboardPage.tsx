@@ -12,6 +12,8 @@ import {
   getRecentAuditLogs,
   type AuditLogRow,
 } from '../../lib/dashboard/dashboardApi'
+import { listDocuments } from '../../lib/documents/documentsApi'
+import { fetchRiskFlags, type RiskFlagRow } from '../../lib/risk/riskApi'
 
 const AUDIT_EVENT_LABELS: Record<string, string> = {
   answer_changed: 'Updated an answer',
@@ -20,6 +22,9 @@ const AUDIT_EVENT_LABELS: Record<string, string> = {
   profile_updated: 'Updated your profile',
   review_requested: 'Requested a professional review',
   flag_created: 'A screening flag was recorded',
+  document_uploaded: 'Uploaded a document',
+  document_deleted: 'Removed a document',
+  checklist_rule_applied: 'Linked a document to your checklist',
 }
 
 export function ClientDashboardPage() {
@@ -33,6 +38,8 @@ export function ClientDashboardPage() {
   const [questionsRemaining, setQuestionsRemaining] = useState(0)
   const [reviewStatus, setReviewStatus] = useState<string | null>(null)
   const [recentActivity, setRecentActivity] = useState<AuditLogRow[]>([])
+  const [documentCount, setDocumentCount] = useState(0)
+  const [openFlags, setOpenFlags] = useState<RiskFlagRow[]>([])
 
   useEffect(() => {
     if (!user || !supabaseConfigured) {
@@ -61,12 +68,16 @@ export function ClientDashboardPage() {
           setNextSectionTitle(nextSection?.title ?? null)
         }
 
-        const [status, logs] = await Promise.all([
+        const [status, logs, documents, flags] = await Promise.all([
           getLatestReviewRequestStatus(activeJourney.id),
           getRecentAuditLogs(user.id, 5),
+          listDocuments(activeJourney.id),
+          fetchRiskFlags(activeJourney.id),
         ])
         setReviewStatus(status)
         setRecentActivity(logs)
+        setDocumentCount(documents.length)
+        setOpenFlags(flags.filter((f) => f.status === 'open'))
       }
 
       setLoading(false)
@@ -131,7 +142,7 @@ export function ClientDashboardPage() {
         </Card>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Card>
           <p className="text-sm text-navy/50">{t('dashboard.questionsRemaining')}</p>
           <p className="mt-1 text-3xl font-semibold text-navy">{questionsRemaining}</p>
@@ -141,10 +152,36 @@ export function ClientDashboardPage() {
           <p className="mt-1 text-lg font-semibold text-navy">{reviewStatus ?? t('dashboard.reviewStatusNotRequested')}</p>
         </Card>
         <Card>
-          <p className="text-sm text-navy/50">{t('dashboard.documentsComingSoon')}</p>
-          <p className="mt-1 text-lg font-semibold text-navy/40">—</p>
+          <p className="text-sm text-navy/50">Documents Uploaded</p>
+          <p className="mt-1 text-3xl font-semibold text-navy">{documentCount}</p>
+          <Button variant="ghost" size="sm" className="mt-1 px-0" to="/app/documents">
+            Manage documents →
+          </Button>
+        </Card>
+        <Card>
+          <p className="text-sm text-navy/50">Open Flags</p>
+          <p className="mt-1 text-3xl font-semibold text-navy">{openFlags.length}</p>
+          <Button variant="ghost" size="sm" className="mt-1 px-0" to="/app/checklist">
+            View checklist →
+          </Button>
         </Card>
       </div>
+
+      {openFlags.length > 0 && (
+        <Card>
+          <h2 className="text-lg font-semibold text-navy">Items That May Need a Closer Look</h2>
+          <ul className="mt-3 space-y-2">
+            {openFlags.map((flag) => (
+              <li key={flag.id} className="text-sm text-navy/70">
+                {flag.triggering_explanation}
+              </li>
+            ))}
+          </ul>
+          <Button variant="ghost" size="sm" className="mt-3 px-0" to="/app/timeline">
+            Review your timeline →
+          </Button>
+        </Card>
+      )}
 
       <Card>
         <h2 className="text-lg font-semibold text-navy">{t('dashboard.recentActivityTitle')}</h2>
@@ -199,7 +236,7 @@ function DemoDashboard() {
         </Card>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Card>
           <p className="text-sm text-navy/50">{t('dashboard.questionsRemaining')}</p>
           <p className="mt-1 text-3xl font-semibold text-navy">42</p>
@@ -209,14 +246,22 @@ function DemoDashboard() {
           <p className="mt-1 text-lg font-semibold text-navy">{t('dashboard.reviewStatusNotRequested')}</p>
         </Card>
         <Card>
-          <p className="text-sm text-navy/50">{t('dashboard.documentsComingSoon')}</p>
-          <p className="mt-1 text-lg font-semibold text-navy/40">—</p>
+          <p className="text-sm text-navy/50">Documents Uploaded</p>
+          <p className="mt-1 text-3xl font-semibold text-navy">3</p>
+        </Card>
+        <Card>
+          <p className="text-sm text-navy/50">Open Flags</p>
+          <p className="mt-1 text-3xl font-semibold text-navy">1</p>
         </Card>
       </div>
 
       <Card>
         <h2 className="text-lg font-semibold text-navy">What's Coming Next</h2>
-        <p className="mt-2 text-sm text-navy/60">{t('dashboard.placeholderNotice')}</p>
+        <p className="mt-2 text-sm text-navy/60">
+          This dashboard is a functional placeholder here because Supabase isn't connected in this environment.
+          Once connected, it shows your real progress, uploaded documents, personalized checklist, and any
+          flags from your timeline or questionnaire answers.
+        </p>
       </Card>
     </div>
   )

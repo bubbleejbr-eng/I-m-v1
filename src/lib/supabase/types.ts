@@ -18,6 +18,9 @@ export type QuestionInputType = 'text' | 'textarea' | 'date' | 'select' | 'multi
 export type AnswerSource = 'user_entered' | 'ai_extracted_unconfirmed' | 'ai_extracted_confirmed'
 export type RiskFlagCategory = 'informational' | 'consistency' | 'professional_review_recommended' | 'urgent'
 export type RiskFlagStatus = 'open' | 'resolved' | 'overridden'
+export type RequirementLevel = 'generally_requested' | 'conditional' | 'recommended' | 'professional_review_item'
+export type ChecklistItemStatus = 'outstanding' | 'uploaded' | 'in_review' | 'accepted' | 'needs_replacement'
+export type DocumentReviewStatus = 'not_reviewed' | 'in_review' | 'accepted' | 'needs_replacement'
 export type JourneyStatus = 'in_progress' | 'ready_for_review' | 'in_review' | 'completed' | 'withdrawn'
 export type ReviewRequestStatus =
   | 'draft' | 'payment_pending' | 'submitted' | 'intake_review' | 'awaiting_assignment'
@@ -164,6 +167,7 @@ export interface Database {
           flag_category: RiskFlagCategory
           flag_label: string
           explanation_template: string
+          condition_expression: unknown
           approval_status: string
         },
         never
@@ -175,6 +179,9 @@ export interface Database {
           risk_rule_id: string
           triggering_explanation: string
           status: RiskFlagStatus
+          resolved_by: string | null
+          resolved_at: string | null
+          override_reason: string | null
           created_at: string
           updated_at: string
         },
@@ -209,6 +216,173 @@ export interface Database {
           updated_at: string
         },
         'journey_id' | 'review_product_id'
+      >
+      household_members: Table<
+        { id: string; journey_id: string; relationship: string; full_name: string; date_of_birth: string | null },
+        'journey_id' | 'relationship' | 'full_name'
+      >
+      addresses: Table<
+        {
+          id: string
+          journey_id: string
+          household_member_id: string | null
+          street_line1: string | null
+          street_line2: string | null
+          city: string | null
+          state_province: string | null
+          postal_code: string | null
+          country: string | null
+          start_date: string | null
+          end_date: string | null
+          is_current: boolean
+          created_at: string
+          updated_at: string
+        },
+        'journey_id'
+      >
+      employments: Table<
+        {
+          id: string
+          journey_id: string
+          employer_name: string | null
+          occupation: string | null
+          city: string | null
+          state_province: string | null
+          country: string | null
+          start_date: string | null
+          end_date: string | null
+          is_current: boolean
+          created_at: string
+          updated_at: string
+        },
+        'journey_id'
+      >
+      schools: Table<
+        {
+          id: string
+          journey_id: string
+          school_name: string | null
+          city: string | null
+          state_province: string | null
+          country: string | null
+          start_date: string | null
+          end_date: string | null
+          created_at: string
+          updated_at: string
+        },
+        'journey_id'
+      >
+      trips: Table<
+        {
+          id: string
+          journey_id: string
+          departure_date: string | null
+          return_date: string | null
+          destination_country: string | null
+          reason_for_trip: string | null
+          created_at: string
+          updated_at: string
+        },
+        'journey_id'
+      >
+      marriages: Table<
+        {
+          id: string
+          journey_id: string
+          spouse_full_name: string | null
+          marriage_date: string | null
+          marriage_location: string | null
+          marriage_ended_date: string | null
+          marriage_ended_reason: 'divorce' | 'death' | 'annulment' | null
+          is_current: boolean
+          created_at: string
+          updated_at: string
+        },
+        'journey_id'
+      >
+      children: Table<
+        {
+          id: string
+          journey_id: string
+          full_name: string | null
+          date_of_birth: string | null
+          country_of_birth: string | null
+          current_country_of_residence: string | null
+          relationship_type: string | null
+          created_at: string
+          updated_at: string
+        },
+        'journey_id'
+      >
+      document_categories: Table<
+        { id: string; journey_type_id: string | null; category_key: string; category_label: string; sort_order: number },
+        never
+      >
+      documents: Table<
+        {
+          id: string
+          journey_id: string
+          category_id: string | null
+          ai_suggested_category_id: string | null
+          related_household_member_id: string | null
+          related_questionnaire_section_id: string | null
+          storage_bucket: string
+          storage_path: string
+          original_filename: string
+          display_name: string
+          mime_type: string
+          file_size_bytes: number | null
+          document_date: string | null
+          expiration_date: string | null
+          review_status: DocumentReviewStatus
+          virus_scan_status: 'pending' | 'clean' | 'flagged'
+          deleted_at: string | null
+          created_at: string
+          updated_at: string
+          created_by: string | null
+        },
+        'journey_id' | 'storage_path' | 'original_filename' | 'display_name' | 'mime_type'
+      >
+      document_versions: Table<
+        {
+          id: string
+          document_id: string
+          storage_path: string
+          original_filename: string
+          file_size_bytes: number | null
+          uploaded_by: string | null
+          created_at: string
+        },
+        'document_id' | 'storage_path' | 'original_filename'
+      >
+      checklist_rules: Table<
+        {
+          id: string
+          workflow_version_id: string
+          document_category_id: string | null
+          rule_key: string
+          document_name: string
+          plain_language_explanation: string
+          requirement_level: RequirementLevel
+          condition_expression: unknown
+          approval_status: string
+        },
+        never
+      >
+      checklist_items: Table<
+        {
+          id: string
+          journey_id: string
+          checklist_rule_id: string
+          related_household_member_id: string | null
+          document_id: string | null
+          status: ChecklistItemStatus
+          reviewer_comment: string | null
+          client_notes: string | null
+          created_at: string
+          updated_at: string
+        },
+        'journey_id' | 'checklist_rule_id'
       >
       audit_logs: Table<
         {

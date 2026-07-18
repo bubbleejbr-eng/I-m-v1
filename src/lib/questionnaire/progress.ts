@@ -14,6 +14,19 @@ export function buildDraftsFromAnswers(
   return drafts
 }
 
+/** Re-keys a drafts-by-question-id map by question_key, for rule engines that address questions by key (see src/lib/rules/ruleCondition.ts). */
+export function buildAnswerByQuestionKey(
+  questions: QuestionRow[],
+  drafts: Map<string, AnswerDraft>,
+): Map<string, AnswerDraft> {
+  const byKey = new Map<string, AnswerDraft>()
+  for (const question of questions) {
+    const draft = drafts.get(question.id)
+    if (draft) byKey.set(question.question_key, draft)
+  }
+  return byKey
+}
+
 export function isAnswered(draft: AnswerDraft | undefined): boolean {
   if (!draft) return false
   if (draft.isNotSure) return true

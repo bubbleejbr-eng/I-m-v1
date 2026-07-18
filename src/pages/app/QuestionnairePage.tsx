@@ -11,7 +11,13 @@ import {
   type WorkflowContent,
   type UserAnswerRow,
 } from '../../lib/questionnaire/questionnaireApi'
-import { buildDraftsFromAnswers, computeProgress, computeVisibleQuestionIds } from '../../lib/questionnaire/progress'
+import {
+  buildDraftsFromAnswers,
+  buildAnswerByQuestionKey,
+  computeProgress,
+  computeVisibleQuestionIds,
+} from '../../lib/questionnaire/progress'
+import { fetchRiskRules, fetchRiskFlags, evaluateAnswerRiskRules, type RiskRuleRow, type RiskFlagRow } from '../../lib/risk/riskApi'
 import { logAuditEvent } from '../../lib/audit/logAuditEvent'
 import { SectionSidebar } from '../../components/questionnaire/SectionSidebar'
 import { QuestionField, draftFromAnswer, type AnswerDraft } from '../../components/questionnaire/QuestionField'
@@ -29,6 +35,8 @@ export function QuestionnairePage() {
   const [currentSectionId, setCurrentSectionId] = useState<string | null>(null)
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved'>('idle')
   const [certificationError, setCertificationError] = useState(false)
+  const [riskRules, setRiskRules] = useState<RiskRuleRow[]>([])
+  const [riskFlags, setRiskFlags] = useState<RiskFlagRow[]>([])
 
   useEffect(() => {
     if (!user) {
@@ -40,13 +48,17 @@ export function QuestionnairePage() {
       setJourney(activeJourney)
 
       if (activeJourney?.workflow_version_id) {
-        const [workflowContent, answers] = await Promise.all([
+        const [workflowContent, answers, rules, flags] = await Promise.all([
           fetchWorkflowContent(activeJourney.workflow_version_id),
           fetchAnswers(activeJourney.id),
+          fetchRiskRules(activeJourney.workflow_version_id),
+          fetchRiskFlags(activeJourney.id),
         ])
         setContent(workflowContent)
         setDrafts(buildDraftsFromAnswers(workflowContent.questions, answers))
         setCurrentSectionId(workflowContent.sections[0]?.id ?? null)
+        setRiskRules(rules)
+        setRiskFlags(flags)
       }
       setLoading(false)
     })()
@@ -101,7 +113,7 @@ export function QuestionnairePage() {
   }
 
   async function commitDraft(questionId: string, next: AnswerDraft) {
-    if (!journey) return
+    if (!journey || !content) return
     setSaveStatus('saving')
     const saved = await saveAnswer({
       journeyId: journey.id,
@@ -111,13 +123,25 @@ export function QuestionnairePage() {
       isNotSure: next.isNotSure,
     })
     if (saved) {
-      setDrafts((prev) => new Map(prev).set(questionId, draftFromAnswer(saved as UserAnswerRow)))
+      const updatedDrafts = new Map(drafts).set(questionId, draftFromAnswer(saved as UserAnswerRow))
+      setDrafts(updatedDrafts)
       void logAuditEvent({
         eventType: 'answer_changed',
         journeyId: journey.id,
         targetTable: 'user_answers',
         targetId: questionId,
       })
+
+      if (riskRules.length > 0) {
+        const answerByQuestionKey = buildAnswerByQuestionKey(content.questions, updatedDrafts)
+        const updatedFlags = await evaluateAnswerRiskRules({
+          journeyId: journey.id,
+          rules: riskRules,
+          answerByQuestionKey,
+          existingFlags: riskFlags,
+        })
+        setRiskFlags(updatedFlags)
+      }
     }
     setSaveStatus('saved')
   }

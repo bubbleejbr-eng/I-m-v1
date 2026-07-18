@@ -9,8 +9,10 @@ export interface AppNavLink {
 export const appNavByRole: Record<AppRole, AppNavLink[]> = {
   client: [
     { label: 'Dashboard', path: '/app/dashboard' },
-    { label: 'My Immigration Journey', path: '/app/dashboard' },
-    { label: 'Documents', path: '/app/dashboard' },
+    { label: 'Questionnaire', path: '/app/questionnaire' },
+    { label: 'Timeline', path: '/app/timeline' },
+    { label: 'Documents', path: '/app/documents' },
+    { label: 'Checklist', path: '/app/checklist' },
     { label: 'Privacy & Security', path: '/app/dashboard' },
   ],
   reviewer: [{ label: 'Assigned Matters', path: '/app/reviewer' }],

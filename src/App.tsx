@@ -31,6 +31,9 @@ import { ReviewerDashboardPage } from './pages/app/ReviewerDashboardPage'
 import { AdminDashboardPage } from './pages/app/AdminDashboardPage'
 import { RolePlaceholderPage } from './pages/app/RolePlaceholderPage'
 import { QuestionnairePage } from './pages/app/QuestionnairePage'
+import { DocumentVaultPage } from './pages/app/DocumentVaultPage'
+import { ChecklistPage } from './pages/app/ChecklistPage'
+import { TimelinePage } from './pages/app/TimelinePage'
 
 import { OnboardingIndexPage } from './pages/onboarding/OnboardingIndexPage'
 import { LanguageStep } from './pages/onboarding/LanguageStep'
@@ -81,6 +84,9 @@ function App() {
         <Route element={<AppShell />}>
           <Route path="dashboard" element={<ClientDashboardPage />} />
           <Route path="questionnaire" element={<QuestionnairePage />} />
+          <Route path="documents" element={<DocumentVaultPage />} />
+          <Route path="checklist" element={<ChecklistPage />} />
+          <Route path="timeline" element={<TimelinePage />} />
           <Route
             path="reviewer"
             element={

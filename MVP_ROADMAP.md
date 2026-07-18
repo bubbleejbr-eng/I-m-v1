@@ -53,6 +53,8 @@ Phase 1 status against this list: items 19, 20, 21, 22, 23, 24, 25, 26, and 18 (
 
 Phase 2 status against this list: items 1–7 are now functionally complete — account creation, language selection, consent capture, naturalization journey selection, the full 28-section questionnaire with autosave and conditional logic, and progress tracking all work end-to-end against a connected Supabase project. Item 8 (document upload) remains Phase 3. Items 9–17 (checklist, flags beyond onboarding urgency screening, reviewer assignment, admin editing) remain Phases 3–4.
 
+Phase 3 status against this list: items 8–11 are now functionally complete — private document upload/categorization, a personalized checklist generated from `checklist_rules` against confirmed answers, and test-inconsistency detection (address/employment history gaps, overlapping travel dates) all work end-to-end. The risk/escalation engine now also covers 11 answer-triggered `professional_review_recommended`/`informational` rules in addition to the 9 onboarding urgent ones. Items 12–17 (reviewer assignment and access, admin rule editing) remain Phase 4.
+
 ## Deferred immigration journeys (require legal review before activation)
 
 T visa, U visa, VAWA, asylum, removal defense/immigration court, waivers, criminal inadmissibility, fraud or misrepresentation, prior removal orders, and other complex humanitarian cases. These require separate legal review, enhanced confidentiality protections, qualified professional approval, and specialized escalation rules before any client-facing activation. They exist today only as inactive "Coming Soon" cards and inactive `immigration_journey_types` rows (`is_active = false`).
@@ -98,6 +100,6 @@ Stripe integration is structural only in Phase 1 (schema + sample pricing UI, al
 - An e-signature provider for engagement agreements and G-28 execution.
 - Identity-verification provider for professional (attorney) onboarding.
 
-## Recommended exact command for Phase 3
+## Recommended exact command for Phase 4
 
-> Phase 2 is complete and functional. Begin Phase 3: build the secure document vault (private storage bucket already migrated in Phase 1), generate the personalized USCIS checklist from `checklist_rules` against a client's confirmed answers, add address/employment/travel/marriage timeline UIs with date-gap and overlap detection, and extend the risk/escalation engine beyond onboarding's urgent-only screening to informational and consistency flags evaluated against full questionnaire answers.
+> Phase 3 is complete and functional. Begin Phase 4: build the reviewer dashboard against the already-migrated `review_assignments`/`reviewer_notes` tables (internal vs. client-visible notes), a professional-review request flow backed by `review_products`/`review_requests`, and an admin workflow editor for `questionnaire_sections`/`questions`/`checklist_rules`/`risk_rules` so non-engineering staff can maintain content without a deploy.
