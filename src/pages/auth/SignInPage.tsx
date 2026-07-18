@@ -31,7 +31,7 @@ export function SignInPage() {
       return
     }
 
-    navigate('/app/dashboard')
+    navigate('/onboarding')
   }
 
   return (

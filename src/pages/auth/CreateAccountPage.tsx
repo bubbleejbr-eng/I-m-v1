@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import i18n from '../../i18n'
 import { Container, Button, DisclaimerBanner } from '../../ui'
 import { supabase, isSupabaseConfigured } from '../../lib/supabase/client'
 import { legalNotices } from '../../content/brand'
@@ -26,10 +27,17 @@ export function CreateAccountPage() {
     }
 
     setSubmitting(true)
-    const { data, error: signUpError } = await supabase.auth.signUp({
+    // The profile row and default 'client' role are created server-side
+    // by the handle_new_user trigger (see
+    // supabase/migrations/0019_auto_provision_and_journey_screening.sql)
+    // as soon as this insert into auth.users lands — a client can never
+    // insert their own user_roles row directly.
+    const { error: signUpError } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { first_name: firstName, last_name: lastName } },
+      options: {
+        data: { first_name: firstName, last_name: lastName, preferred_language: i18n.language },
+      },
     })
     setSubmitting(false)
 
@@ -38,17 +46,7 @@ export function CreateAccountPage() {
       return
     }
 
-    if (data.user) {
-      await supabase.from('profiles').upsert({
-        id: data.user.id,
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        preferred_language: 'en',
-      })
-    }
-
-    navigate('/app/dashboard')
+    navigate('/onboarding/profile')
   }
 
   return (

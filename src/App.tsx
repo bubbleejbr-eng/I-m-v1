@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import { PublicLayout } from './components/layout/PublicLayout'
 import { AppShell } from './components/layout/AppShell'
+import { OnboardingLayout } from './components/layout/OnboardingLayout'
 import { ProtectedRoute } from './components/auth/ProtectedRoute'
 import { RoleGuard } from './components/auth/RoleGuard'
 
@@ -29,6 +30,14 @@ import { ClientDashboardPage } from './pages/app/ClientDashboardPage'
 import { ReviewerDashboardPage } from './pages/app/ReviewerDashboardPage'
 import { AdminDashboardPage } from './pages/app/AdminDashboardPage'
 import { RolePlaceholderPage } from './pages/app/RolePlaceholderPage'
+import { QuestionnairePage } from './pages/app/QuestionnairePage'
+
+import { OnboardingIndexPage } from './pages/onboarding/OnboardingIndexPage'
+import { LanguageStep } from './pages/onboarding/LanguageStep'
+import { ProfileStep } from './pages/onboarding/ProfileStep'
+import { ConsentStep } from './pages/onboarding/ConsentStep'
+import { JourneyStep } from './pages/onboarding/JourneyStep'
+import { UrgencyStep } from './pages/onboarding/UrgencyStep'
 
 import { NotFoundPage } from './pages/public/NotFoundPage'
 
@@ -57,9 +66,21 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
 
+      <Route path="/onboarding" element={<ProtectedRoute />}>
+        <Route element={<OnboardingLayout />}>
+          <Route index element={<OnboardingIndexPage />} />
+          <Route path="language" element={<LanguageStep />} />
+          <Route path="profile" element={<ProfileStep />} />
+          <Route path="consent" element={<ConsentStep />} />
+          <Route path="journey" element={<JourneyStep />} />
+          <Route path="urgency" element={<UrgencyStep />} />
+        </Route>
+      </Route>
+
       <Route path="/app" element={<ProtectedRoute />}>
         <Route element={<AppShell />}>
           <Route path="dashboard" element={<ClientDashboardPage />} />
+          <Route path="questionnaire" element={<QuestionnairePage />} />
           <Route
             path="reviewer"
             element={

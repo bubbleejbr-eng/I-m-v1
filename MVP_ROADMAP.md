@@ -51,6 +51,8 @@ Long-term, the platform aims to be the operating system for U.S. immigration app
 
 Phase 1 status against this list: items 19, 20, 21, 22, 23, 24, 25, 26, and 18 (responsive layout) are satisfied now. Items 1–17 require Phases 2–4 and are scaffolded (routes, tables, RLS) but not feature-complete.
 
+Phase 2 status against this list: items 1–7 are now functionally complete — account creation, language selection, consent capture, naturalization journey selection, the full 28-section questionnaire with autosave and conditional logic, and progress tracking all work end-to-end against a connected Supabase project. Item 8 (document upload) remains Phase 3. Items 9–17 (checklist, flags beyond onboarding urgency screening, reviewer assignment, admin editing) remain Phases 3–4.
+
 ## Deferred immigration journeys (require legal review before activation)
 
 T visa, U visa, VAWA, asylum, removal defense/immigration court, waivers, criminal inadmissibility, fraud or misrepresentation, prior removal orders, and other complex humanitarian cases. These require separate legal review, enhanced confidentiality protections, qualified professional approval, and specialized escalation rules before any client-facing activation. They exist today only as inactive "Coming Soon" cards and inactive `immigration_journey_types` rows (`is_active = false`).
@@ -96,6 +98,6 @@ Stripe integration is structural only in Phase 1 (schema + sample pricing UI, al
 - An e-signature provider for engagement agreements and G-28 execution.
 - Identity-verification provider for professional (attorney) onboarding.
 
-## Recommended exact command for Phase 2
+## Recommended exact command for Phase 3
 
-> Phase 1 is complete and functional. Begin Phase 2: build client onboarding (language selection, account creation fields, consent flow with unchecked-by-default boxes, U.S. immigration journey selection, urgency/safety screening), the full client dashboard experience, and the naturalization questionnaire engine (28 sections, conditional logic, save-and-resume) backed by the `questionnaire_sections`/`questions`/`conditional_rules`/`user_answers` tables already migrated in Phase 1.
+> Phase 2 is complete and functional. Begin Phase 3: build the secure document vault (private storage bucket already migrated in Phase 1), generate the personalized USCIS checklist from `checklist_rules` against a client's confirmed answers, add address/employment/travel/marriage timeline UIs with date-gap and overlap detection, and extend the risk/escalation engine beyond onboarding's urgent-only screening to informational and consistency flags evaluated against full questionnaire answers.
