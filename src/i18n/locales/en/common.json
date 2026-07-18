@@ -1,0 +1,213 @@
+{
+  "brand": {
+    "productName": "AGH American Immigration",
+    "taglinePrimary": "Your guided U.S. immigration application workspace.",
+    "taglineSecondary": "Prepare with confidence. Review before filing. Get professional help when you need it."
+  },
+  "nav": {
+    "howItWorks": "How It Works",
+    "services": "U.S. Immigration Services",
+    "naturalization": "Naturalization Preparation",
+    "professionalReview": "Professional Review",
+    "affordableHelp": "Affordable Help",
+    "forAttorneys": "For Attorneys",
+    "forNonprofits": "For Nonprofits",
+    "about": "About",
+    "pricing": "Pricing",
+    "helpCenter": "Help Center",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "menu": "Menu"
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "language": "Language",
+    "rights": "All rights reserved.",
+    "governmentNotice": "AGH American Immigration is a private technology platform. It is not affiliated with USCIS, the Department of Homeland Security, the Department of State, any U.S. court, or any government agency.",
+    "companyOwner": "AGH American Immigration is a product of Anaya Global Holdings."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "continue": "Continue",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "comingSoon": "Coming Soon",
+    "sampleFormReference": "Common USCIS form",
+    "demoDataBadge": "DEMO DATA",
+    "notLive": "Sample Pricing — Not Live",
+    "skipToContent": "Skip to main content"
+  },
+  "home": {
+    "heroTitle": "Prepare Your U.S. Immigration Application With Confidence.",
+    "heroSubtitle": "Answer guided questions, organize your immigration documents, find missing information, and request professional review before you file.",
+    "primaryCta": "Start My U.S. Immigration Journey",
+    "secondaryCta": "See How It Works",
+    "trustLine": "Private immigration preparation technology. Not affiliated with USCIS or any U.S. government agency.",
+    "stepsTitle": "How AGH American Immigration Works",
+    "step1Title": "Tell us about your U.S. immigration situation.",
+    "step2Title": "Prepare your information and supporting documents.",
+    "step3Title": "Continue on your own or request professional immigration review.",
+    "benefitsTitle": "Everything You Need to Prepare",
+    "benefit1": "Plain-English immigration questions",
+    "benefit2": "Personalized USCIS document checklist",
+    "benefit3": "Secure document organization",
+    "benefit4": "Missing-information detection",
+    "benefit5": "Application consistency review",
+    "benefit6": "Optional attorney review",
+    "benefit7": "Affordable and nonprofit assistance options",
+    "benefit8": "Case-task and deadline tracking",
+    "transparencyTitle": "Transparent About What You're Paying For",
+    "transparencyBody": "USCIS forms are available free from the United States government. AGH American Immigration charges only for its technology, guided preparation tools, document organization, quality review, and optional professional services.",
+    "journeyTitle": "Built for the American Immigration Journey",
+    "journeyBody": "Whether you are preparing for U.S. citizenship, helping a family member immigrate, organizing documents for USCIS, or requesting professional review, your entire application journey can live in one secure workspace.",
+    "journeysSectionTitle": "Choose Your U.S. Immigration Situation",
+    "journeysSectionBody": "You don't need to know which USCIS form applies. Start with what's happening in your life, and we'll help you find the right path."
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "A guided, secure path from your first question to your completed application package.",
+    "step1Heading": "1. Tell us about your situation",
+    "step1Body": "Choose the plain-language description that matches your life, not a government form number.",
+    "step2Heading": "2. Answer guided questions",
+    "step2Body": "Work through a conversational questionnaire at your own pace. Save and return any time.",
+    "step3Heading": "3. Organize your documents",
+    "step3Body": "Upload evidence into a secure vault and get a personalized checklist for your situation.",
+    "step4Heading": "4. Review flags and missing information",
+    "step4Body": "We highlight gaps, inconsistencies, and issues that may need a closer look before you file.",
+    "step5Heading": "5. Request professional review when you're ready",
+    "step5Body": "Ask an immigration attorney, reviewer, or nonprofit partner to look at your materials."
+  },
+  "services": {
+    "title": "U.S. Immigration Services",
+    "subtitle": "AGH American Immigration is organized around real-life situations, not form numbers. Explore the journeys we support today and what's coming next.",
+    "activeLabel": "Available Now",
+    "comingSoonLabel": "Coming Soon"
+  },
+  "naturalization": {
+    "title": "Naturalization Preparation",
+    "subtitle": "Structured preparation for lawful permanent residents applying for U.S. citizenship.",
+    "formNote": "Common USCIS form: N-400",
+    "intro": "This guided workflow helps you organize the information commonly needed for a naturalization application: your identity, history, family, travel, and background questions.",
+    "disclaimerHeading": "What this workflow does not do",
+    "disclaimerBody": "Based on the information you provided, we identified items that may need additional documentation or professional review before you file. This platform does not make a final legal determination of naturalization eligibility.",
+    "sectionsTitle": "What You'll Prepare",
+    "ctaTitle": "Ready to begin?",
+    "cta": "Start Naturalization Preparation"
+  },
+  "professionalReview": {
+    "title": "Professional Immigration Review",
+    "subtitle": "Request review from a member of our internal professional network when you want a second set of eyes.",
+    "body": "Professional review is separate from using the preparation platform. Purchasing a review does not create legal representation and does not generate any government form on your behalf.",
+    "productsTitle": "Review Options",
+    "product1": "Immigration Application Completeness Review",
+    "product2": "Supporting Document Review",
+    "product3": "Application Consistency Review",
+    "product4": "Immigration Attorney Consultation",
+    "product5": "Attorney Application Review",
+    "product6": "Limited-Scope Immigration Representation Inquiry",
+    "product7": "Full Immigration Representation Inquiry",
+    "product8": "Nonprofit Immigration Assistance Request"
+  },
+  "affordableHelp": {
+    "title": "Affordable Immigration Help",
+    "subtitle": "I Need Affordable Immigration Help",
+    "body": "Tell us about your situation and budget. We'll help identify possible review, referral, or nonprofit assistance options.",
+    "notice": "Submitting this request does not guarantee that an attorney or nonprofit organization can accept your matter. Your information will be used to identify possible review, referral, or assistance options.",
+    "cta": "Start an Affordable Help Request"
+  },
+  "forAttorneys": {
+    "title": "For Immigration Attorneys",
+    "subtitle": "A future professional workspace for verified immigration attorneys.",
+    "body": "Attorney accounts require identity verification, bar number and jurisdiction confirmation, bar-status confirmation, conflict-check acknowledgment, and scope-of-engagement acceptance before accessing any client matter. This role is a protected placeholder in the current MVP.",
+    "cta": "Request Early Access"
+  },
+  "forNonprofits": {
+    "title": "For Nonprofit Organizations",
+    "subtitle": "A future workspace for DOJ-recognized nonprofits and accredited representatives.",
+    "body": "Nonprofit case manager accounts will support intake, referral routing, and case tracking for immigration service organizations, including our partner Anaya's Way Immigration Advocates. This role is a protected placeholder in the current MVP.",
+    "cta": "Request Early Access"
+  },
+  "about": {
+    "title": "About Anaya Global Holdings",
+    "subtitle": "The company behind AGH American Immigration.",
+    "body1": "Anaya Global Holdings builds technology that helps immigrants and their families prepare for U.S. immigration processes in a more organized, affordable, and understandable way.",
+    "body2": "AGH American Immigration is a private technology platform. It is not a government agency, not a law firm, and not affiliated with USCIS, the Department of Homeland Security, the Department of State, or any U.S. court.",
+    "body3": "Our long-term vision is to become the operating system for U.S. immigration application preparation and professional review — supporting individuals, families, attorneys, nonprofits, employers, and community organizations."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Simple, transparent sample pricing. Final pricing is configured by our team and may vary.",
+    "notice": "Sample Pricing — Not Live",
+    "product1Name": "U.S. Immigration Preparation Workspace",
+    "product2Name": "Application Completeness Review",
+    "product3Name": "Immigration Professional Consultation",
+    "product4Name": "Attorney Application Review",
+    "product5Name": "Nonprofit Assistance Request"
+  },
+  "helpCenter": {
+    "title": "Help Center",
+    "subtitle": "Search articles or browse by category.",
+    "searchPlaceholder": "Search the help center",
+    "categoriesTitle": "Browse by Category"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help with questions about the platform.",
+    "nameLabel": "Full name",
+    "emailLabel": "Email address",
+    "messageLabel": "How can we help?",
+    "submit": "Send Message"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "placeholderNotice": "This is a placeholder Privacy Policy for the MVP build. Final legal content will be reviewed and approved before launch."
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "placeholderNotice": "This is a placeholder Terms of Use document for the MVP build. Final legal content will be reviewed and approved before launch."
+  },
+  "legalDisclaimer": {
+    "title": "Legal and Professional Disclaimer",
+    "body1": "AGH American Immigration is a private immigration technology platform. It is not a law firm, does not replace an attorney, and does not guarantee eligibility, approval, or any immigration result.",
+    "body2": "Automated preparation tools and general educational information are not a substitute for individualized legal advice. No attorney-client relationship is created by using this platform. An attorney-client relationship is created only through an express, documented professional engagement."
+  },
+  "govNonAffiliation": {
+    "title": "Government Non-Affiliation Notice",
+    "body": "AGH American Immigration is not affiliated with USCIS, the Department of Homeland Security, the Department of State, the Executive Office for Immigration Review, or any U.S. government agency. USCIS forms are available free of charge directly from the U.S. government."
+  },
+  "auth": {
+    "signInTitle": "Sign In",
+    "signInSubtitle": "Welcome back. Continue your U.S. immigration preparation.",
+    "createAccountTitle": "Create Account",
+    "createAccountSubtitle": "Start your guided U.S. immigration application workspace.",
+    "emailLabel": "Email address",
+    "passwordLabel": "Password",
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "confirmPasswordLabel": "Confirm password",
+    "signInCta": "Sign In",
+    "createAccountCta": "Create Account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "roles": {
+    "client": "Client",
+    "reviewer": "Application Reviewer",
+    "attorney": "Immigration Attorney",
+    "nonprofit": "Nonprofit Case Manager",
+    "orgAdmin": "Organization Administrator",
+    "platformAdmin": "Platform Administrator"
+  },
+  "dashboard": {
+    "welcomeBack": "Welcome back",
+    "nextStepTitle": "Your Next Immigration Step",
+    "continueApplication": "Continue My Application",
+    "placeholderNotice": "This dashboard is a functional placeholder. Full questionnaire, document vault, and checklist features arrive in later phases."
+  }
+}

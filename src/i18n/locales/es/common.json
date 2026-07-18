@@ -1,0 +1,213 @@
+{
+  "brand": {
+    "productName": "AGH American Immigration",
+    "taglinePrimary": "Su espacio de trabajo guiado para solicitudes de inmigración de EE. UU.",
+    "taglineSecondary": "Prepárese con confianza. Revise antes de presentar. Obtenga ayuda profesional cuando la necesite."
+  },
+  "nav": {
+    "howItWorks": "Cómo Funciona",
+    "services": "Servicios de Inmigración de EE. UU.",
+    "naturalization": "Preparación para la Naturalización",
+    "professionalReview": "Revisión Profesional",
+    "affordableHelp": "Ayuda Asequible",
+    "forAttorneys": "Para Abogados",
+    "forNonprofits": "Para Organizaciones sin Fines de Lucro",
+    "about": "Acerca de",
+    "pricing": "Precios",
+    "helpCenter": "Centro de Ayuda",
+    "contact": "Contacto",
+    "signIn": "Iniciar Sesión",
+    "createAccount": "Crear Cuenta",
+    "menu": "Menú"
+  },
+  "footer": {
+    "product": "Producto",
+    "company": "Compañía",
+    "legal": "Legal",
+    "language": "Idioma",
+    "rights": "Todos los derechos reservados.",
+    "governmentNotice": "AGH American Immigration es una plataforma de tecnología privada. No está afiliada con USCIS, el Departamento de Seguridad Nacional, el Departamento de Estado, ningún tribunal de EE. UU. ni ninguna agencia gubernamental.",
+    "companyOwner": "AGH American Immigration es un producto de Anaya Global Holdings."
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "getStarted": "Comenzar",
+    "continue": "Continuar",
+    "back": "Atrás",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "comingSoon": "Próximamente",
+    "sampleFormReference": "Formulario común de USCIS",
+    "demoDataBadge": "DATOS DE DEMOSTRACIÓN",
+    "notLive": "Precio de Muestra — No Activo",
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "home": {
+    "heroTitle": "Prepare su Solicitud de Inmigración de EE. UU. con Confianza.",
+    "heroSubtitle": "Responda preguntas guiadas, organice sus documentos de inmigración, encuentre información faltante y solicite una revisión profesional antes de presentar su caso.",
+    "primaryCta": "Comenzar Mi Proceso de Inmigración en EE. UU.",
+    "secondaryCta": "Ver Cómo Funciona",
+    "trustLine": "Tecnología privada de preparación de inmigración. No afiliada con USCIS ni con ninguna agencia gubernamental de EE. UU.",
+    "stepsTitle": "Cómo Funciona AGH American Immigration",
+    "step1Title": "Cuéntenos sobre su situación migratoria en EE. UU.",
+    "step2Title": "Prepare su información y documentos de respaldo.",
+    "step3Title": "Continúe por su cuenta o solicite una revisión profesional de inmigración.",
+    "benefitsTitle": "Todo lo que Necesita para Prepararse",
+    "benefit1": "Preguntas de inmigración en lenguaje sencillo",
+    "benefit2": "Lista de verificación personalizada de documentos de USCIS",
+    "benefit3": "Organización segura de documentos",
+    "benefit4": "Detección de información faltante",
+    "benefit5": "Revisión de consistencia de la solicitud",
+    "benefit6": "Revisión opcional de un abogado",
+    "benefit7": "Opciones de asistencia asequible y sin fines de lucro",
+    "benefit8": "Seguimiento de tareas y plazos del caso",
+    "transparencyTitle": "Transparencia Sobre lo que Usted Paga",
+    "transparencyBody": "Los formularios de USCIS están disponibles gratuitamente directamente del gobierno de Estados Unidos. AGH American Immigration cobra únicamente por su tecnología, herramientas de preparación guiada, organización de documentos, revisión de calidad y servicios profesionales opcionales.",
+    "journeyTitle": "Diseñado para el Proceso Migratorio Americano",
+    "journeyBody": "Ya sea que se esté preparando para la ciudadanía estadounidense, ayudando a un familiar a inmigrar, organizando documentos para USCIS o solicitando una revisión profesional, todo su proceso puede vivir en un solo espacio de trabajo seguro.",
+    "journeysSectionTitle": "Elija Su Situación Migratoria en EE. UU.",
+    "journeysSectionBody": "No necesita saber qué formulario de USCIS aplica. Comience con lo que está sucediendo en su vida y le ayudaremos a encontrar el camino correcto."
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "subtitle": "Un camino guiado y seguro desde su primera pregunta hasta su paquete de solicitud completo.",
+    "step1Heading": "1. Cuéntenos sobre su situación",
+    "step1Body": "Elija la descripción en lenguaje sencillo que coincida con su vida, no un número de formulario gubernamental.",
+    "step2Heading": "2. Responda preguntas guiadas",
+    "step2Body": "Complete un cuestionario conversacional a su propio ritmo. Guarde y regrese en cualquier momento.",
+    "step3Heading": "3. Organice sus documentos",
+    "step3Body": "Suba evidencia a una bóveda segura y obtenga una lista de verificación personalizada para su situación.",
+    "step4Heading": "4. Revise alertas e información faltante",
+    "step4Body": "Destacamos vacíos, inconsistencias y problemas que pueden necesitar una revisión más cercana antes de presentar.",
+    "step5Heading": "5. Solicite una revisión profesional cuando esté listo",
+    "step5Body": "Pida a un abogado de inmigración, revisor o socio sin fines de lucro que revise sus materiales."
+  },
+  "services": {
+    "title": "Servicios de Inmigración de EE. UU.",
+    "subtitle": "AGH American Immigration está organizado en torno a situaciones de la vida real, no números de formularios. Explore los procesos que apoyamos hoy y lo que viene después.",
+    "activeLabel": "Disponible Ahora",
+    "comingSoonLabel": "Próximamente"
+  },
+  "naturalization": {
+    "title": "Preparación para la Naturalización",
+    "subtitle": "Preparación estructurada para residentes permanentes legales que solicitan la ciudadanía estadounidense.",
+    "formNote": "Formulario común de USCIS: N-400",
+    "intro": "Este flujo guiado le ayuda a organizar la información comúnmente necesaria para una solicitud de naturalización: su identidad, historial, familia, viajes y preguntas de antecedentes.",
+    "disclaimerHeading": "Lo que este flujo no hace",
+    "disclaimerBody": "Según la información que usted proporcionó, identificamos elementos que pueden necesitar documentación adicional o revisión profesional antes de presentar su caso. Esta plataforma no realiza una determinación legal final de elegibilidad para la naturalización.",
+    "sectionsTitle": "Lo que Usted Preparará",
+    "ctaTitle": "¿Listo para comenzar?",
+    "cta": "Comenzar Preparación de Naturalización"
+  },
+  "professionalReview": {
+    "title": "Revisión Profesional de Inmigración",
+    "subtitle": "Solicite una revisión de un miembro de nuestra red profesional interna cuando desee una segunda opinión.",
+    "body": "La revisión profesional es independiente del uso de la plataforma de preparación. Comprar una revisión no crea representación legal ni genera ningún formulario gubernamental en su nombre.",
+    "productsTitle": "Opciones de Revisión",
+    "product1": "Revisión de Completitud de la Solicitud de Inmigración",
+    "product2": "Revisión de Documentos de Respaldo",
+    "product3": "Revisión de Consistencia de la Solicitud",
+    "product4": "Consulta con Abogado de Inmigración",
+    "product5": "Revisión de la Solicitud por un Abogado",
+    "product6": "Consulta de Representación Legal de Alcance Limitado",
+    "product7": "Consulta de Representación Legal Completa",
+    "product8": "Solicitud de Asistencia de Inmigración sin Fines de Lucro"
+  },
+  "affordableHelp": {
+    "title": "Ayuda Asequible de Inmigración",
+    "subtitle": "Necesito Ayuda Asequible de Inmigración",
+    "body": "Cuéntenos sobre su situación y presupuesto. Le ayudaremos a identificar posibles opciones de revisión, referencia o asistencia sin fines de lucro.",
+    "notice": "Enviar esta solicitud no garantiza que un abogado u organización sin fines de lucro pueda aceptar su caso. Su información se utilizará para identificar posibles opciones de revisión, referencia o asistencia.",
+    "cta": "Iniciar una Solicitud de Ayuda Asequible"
+  },
+  "forAttorneys": {
+    "title": "Para Abogados de Inmigración",
+    "subtitle": "Un futuro espacio de trabajo profesional para abogados de inmigración verificados.",
+    "body": "Las cuentas de abogados requieren verificación de identidad, confirmación de número de colegiatura y jurisdicción, confirmación de estatus de colegiatura, reconocimiento de verificación de conflictos y aceptación del alcance del compromiso antes de acceder a cualquier caso de cliente. Este rol es un marcador de posición protegido en el MVP actual.",
+    "cta": "Solicitar Acceso Anticipado"
+  },
+  "forNonprofits": {
+    "title": "Para Organizaciones sin Fines de Lucro",
+    "subtitle": "Un futuro espacio de trabajo para organizaciones sin fines de lucro reconocidas por el DOJ y representantes acreditados.",
+    "body": "Las cuentas de gestores de casos sin fines de lucro apoyarán la admisión, el enrutamiento de referencias y el seguimiento de casos para organizaciones de servicios de inmigración, incluida nuestra socia Anaya's Way Immigration Advocates. Este rol es un marcador de posición protegido en el MVP actual.",
+    "cta": "Solicitar Acceso Anticipado"
+  },
+  "about": {
+    "title": "Acerca de Anaya Global Holdings",
+    "subtitle": "La compañía detrás de AGH American Immigration.",
+    "body1": "Anaya Global Holdings desarrolla tecnología que ayuda a los inmigrantes y sus familias a prepararse para los procesos de inmigración de EE. UU. de una manera más organizada, asequible y comprensible.",
+    "body2": "AGH American Immigration es una plataforma de tecnología privada. No es una agencia gubernamental, no es un despacho de abogados y no está afiliada con USCIS, el Departamento de Seguridad Nacional, el Departamento de Estado ni ningún tribunal de EE. UU.",
+    "body3": "Nuestra visión a largo plazo es convertirnos en el sistema operativo para la preparación de solicitudes de inmigración de EE. UU. y la revisión profesional, apoyando a individuos, familias, abogados, organizaciones sin fines de lucro, empleadores y organizaciones comunitarias."
+  },
+  "pricing": {
+    "title": "Precios",
+    "subtitle": "Precios de muestra simples y transparentes. El precio final es configurado por nuestro equipo y puede variar.",
+    "notice": "Precio de Muestra — No Activo",
+    "product1Name": "Espacio de Trabajo de Preparación de Inmigración de EE. UU.",
+    "product2Name": "Revisión de Completitud de la Solicitud",
+    "product3Name": "Consulta con Profesional de Inmigración",
+    "product4Name": "Revisión de la Solicitud por un Abogado",
+    "product5Name": "Solicitud de Asistencia sin Fines de Lucro"
+  },
+  "helpCenter": {
+    "title": "Centro de Ayuda",
+    "subtitle": "Busque artículos o explore por categoría.",
+    "searchPlaceholder": "Buscar en el centro de ayuda",
+    "categoriesTitle": "Explorar por Categoría"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Estamos aquí para ayudar con preguntas sobre la plataforma.",
+    "nameLabel": "Nombre completo",
+    "emailLabel": "Correo electrónico",
+    "messageLabel": "¿Cómo podemos ayudarle?",
+    "submit": "Enviar Mensaje"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "placeholderNotice": "Este es un marcador de posición de la Política de Privacidad para el MVP. El contenido legal final será revisado y aprobado antes del lanzamiento."
+  },
+  "terms": {
+    "title": "Términos de Uso",
+    "placeholderNotice": "Este es un documento de Términos de Uso de marcador de posición para el MVP. El contenido legal final será revisado y aprobado antes del lanzamiento."
+  },
+  "legalDisclaimer": {
+    "title": "Aviso Legal y Profesional",
+    "body1": "AGH American Immigration es una plataforma de tecnología de inmigración privada. No es un despacho de abogados, no reemplaza a un abogado y no garantiza elegibilidad, aprobación ni ningún resultado migratorio.",
+    "body2": "Las herramientas de preparación automatizadas y la información educativa general no sustituyen el asesoramiento legal individualizado. Ninguna relación abogado-cliente se crea por el uso de esta plataforma. Una relación abogado-cliente se crea únicamente mediante un compromiso profesional expreso y documentado."
+  },
+  "govNonAffiliation": {
+    "title": "Aviso de No Afiliación Gubernamental",
+    "body": "AGH American Immigration no está afiliada con USCIS, el Departamento de Seguridad Nacional, el Departamento de Estado, la Oficina Ejecutiva de Revisión de Inmigración, ni ninguna agencia gubernamental de EE. UU. Los formularios de USCIS están disponibles gratuitamente directamente del gobierno de EE. UU."
+  },
+  "auth": {
+    "signInTitle": "Iniciar Sesión",
+    "signInSubtitle": "Bienvenido de nuevo. Continúe su preparación de inmigración en EE. UU.",
+    "createAccountTitle": "Crear Cuenta",
+    "createAccountSubtitle": "Comience su espacio de trabajo guiado de solicitud de inmigración de EE. UU.",
+    "emailLabel": "Correo electrónico",
+    "passwordLabel": "Contraseña",
+    "firstNameLabel": "Nombre",
+    "lastNameLabel": "Apellido",
+    "confirmPasswordLabel": "Confirmar contraseña",
+    "signInCta": "Iniciar Sesión",
+    "createAccountCta": "Crear Cuenta",
+    "noAccount": "¿No tiene una cuenta?",
+    "haveAccount": "¿Ya tiene una cuenta?"
+  },
+  "roles": {
+    "client": "Cliente",
+    "reviewer": "Revisor de Solicitudes",
+    "attorney": "Abogado de Inmigración",
+    "nonprofit": "Gestor de Casos sin Fines de Lucro",
+    "orgAdmin": "Administrador de Organización",
+    "platformAdmin": "Administrador de la Plataforma"
+  },
+  "dashboard": {
+    "welcomeBack": "Bienvenido de nuevo",
+    "nextStepTitle": "Su Próximo Paso Migratorio",
+    "continueApplication": "Continuar Mi Solicitud",
+    "placeholderNotice": "Este panel es un marcador de posición funcional. Las funciones completas de cuestionario, bóveda de documentos y lista de verificación llegarán en fases posteriores."
+  }
+}

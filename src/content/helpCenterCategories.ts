@@ -1,0 +1,15 @@
+export const helpCenterCategories: string[] = [
+  'Getting Started',
+  'U.S. Immigration Journeys',
+  'Naturalization Preparation',
+  'USCIS Forms and Notices',
+  'Uploading Immigration Documents',
+  'Understanding Review Flags',
+  'Professional Immigration Review',
+  'Affordable Immigration Help',
+  'Payments',
+  'USCIS Case Tracking',
+  'Privacy and Security',
+  'Technical Support',
+  'Legal and Service Boundaries',
+]
